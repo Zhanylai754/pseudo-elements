@@ -1,0 +1,1309 @@
+﻿<!DOCTYPE html>
+
+<html lang="ru">
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
+	<meta charset="utf-8" />
+	<link rel="stylesheet" type="text/css" href="data:text/css;base64,QGltcG9ydCB1cmwoaHR0cHM6Ly9mb250cy5nb29nbGVhcGlzLmNvbS9jc3M/ZmFtaWx5PUJhZCtTY3JpcHR8T3BlbitTYW5zOjQwMCw2MDB8T3BlbitTYW5zK0NvbmRlbnNlZDozMDB8UFQrU2Fuczo0MDAsNDAwaSw3MDAmZGlzcGxheT1zd2FwJnN1YnNldD1jeXJpbGxpYyk7KnttYXJnaW46MDtwYWRkaW5nOjA7Ym94LXNpemluZzpib3JkZXItYm94O291dGxpbmU6MH1ib2R5LGh0bWx7Zm9udC1zaXplOjIwcHghaW1wb3J0YW50O21hcmdpbjowIWltcG9ydGFudH1ib2R5e292ZXJmbG93LXg6aGlkZGVuIWltcG9ydGFudDtwYWRkaW5nOjFyZW0haW1wb3J0YW50fWgxe21hcmdpbjowIWltcG9ydGFudDtwYWRkaW5nOjAhaW1wb3J0YW50O2ZvbnQtZmFtaWx5OidPcGVuIFNhbnMgQ29uZGVuc2VkJyxzYW5zLXNlcmlmIWltcG9ydGFudDtmb250LXNpemU6MnJlbSFpbXBvcnRhbnQ7Zm9udC13ZWlnaHQ6MzAwIWltcG9ydGFudDt0ZXh0LWFsaWduOmNlbnRlciFpbXBvcnRhbnQ7dXNlci1zZWxlY3Q6bm9uZSFpbXBvcnRhbnR9bWFpbj5zZWN0aW9ue3BhZGRpbmc6MCFpbXBvcnRhbnQ7bWFyZ2luOjJyZW0gMCAwIDAhaW1wb3J0YW50fW1haW4+c2VjdGlvbj5oZWFkZXJ7bWFyZ2luOjAgMCAycmVtIDAhaW1wb3J0YW50O3BhZGRpbmc6Y2FsYygxcmVtIC0gMXB4KSAwIWltcG9ydGFudDtib3JkZXItdG9wOjFweCBkYXNoZWQgIzk5OSFpbXBvcnRhbnQ7Ym9yZGVyLWJvdHRvbToxcHggZGFzaGVkICM5OTkhaW1wb3J0YW50fW1haW4+c2VjdGlvbj5oZWFkZXI+aDJ7bWFyZ2luOjAhaW1wb3J0YW50O2ZvbnQtZmFtaWx5OidPcGVuIFNhbnMnLHNhbnMtc2VyaWYhaW1wb3J0YW50O2ZvbnQtc2l6ZToxLjJyZW0haW1wb3J0YW50O2xpbmUtaGVpZ2h0OjEuNXJlbSFpbXBvcnRhbnQ7Zm9udC13ZWlnaHQ6NDAwIWltcG9ydGFudDt1c2VyLXNlbGVjdDpub25lIWltcG9ydGFudH0=" />
+
+	<title>Псевдоэлементы</title>
+</head>
+<!--
+===========================================================================================================
+
+	Каждый образец представлен в самостоятельном и независимом от других элементе <section>,
+	который содержит заголовочную часть <header> и заголовок <h2> с номером образца.
+
+	Общим контейнером для образца является элемент <section> с соответствующим идентификатором,
+	который необходимо использовать в каждом селекторе стиля каждого образца.
+
+	В каждом контейнере <section> уже имеется контейнер <style>, в котором необходимо написать стили
+	для соответствующего образца, можно добавлять и другие элементы разметки, если они необходимы.
+
+===========================================================================================================
+
+	Используемые изображения расположены по пути в той же папке, что и эта страница.
+	Все используемые в этом тесте шрифты уже импортированы и прикреплены к странице.
+	Фамилии шрифтов, а также используемые цвета вы можете видеть под каждым образцом.
+	Для всей страницы уже выставлен базовый размер шрифта: 20px
+
+===========================================================================================================
+
+	У всех элементов уже обнулены все отступы, которые у них были по умолчанию,
+	а также выстален режим размеров:
+
+	* { margin: 0; padding: 0; box-sizing: border-box; outline: none }
+
+===========================================================================================================
+
+	Фиксации для всех черновиков:
+		Черновик [block-…]
+
+	Фиксации для первой публикации в чистовике:
+		Выполнен [block-…]
+
+	Фиксации для всех правок в чистовике по рецензии:
+		Исправлен [block-…]
+
+===========================================================================================================
+-->
+<body>
+<header>
+	<h1>Псевдоэлементы</h1>
+</header>
+<main>
+
+<section id="block-1">
+	<style>
+		#block-1 .para {
+			width: 25rem;
+			margin: auto;
+			padding: 0 3rem 2rem 3rem;
+			font-family: 'Bad Script', cursive;
+			line-height: 1.75em;
+			text-indent: 1.5em;
+			text-align: justify;
+			background-color: #eee;
+			color: #303f9f;
+		}
+
+			#block-1 .para:before {
+				content: '';
+				display: block;
+				width: 0;
+				margin-left: auto;
+				margin-right: -3rem;
+				border-top: 3rem solid white;
+				border-left: 3rem solid #e0e0e0;
+				box-shadow: -0.3rem 0.3rem 0.5rem -0.3rem rgba(0,0,0,0.2);
+			}
+	</style>
+	<header>
+		<h2>Блок № 1</h2>
+	</header>
+	<p class="para">
+		По своим философским взглядам Дезами был материалистом и атеистом, последователем Гельвеция, однако дуализм осмысляет гений.
+		Вещь в себе, как принято считать, заполняет сенсибельный конфликт.
+		Дуализм, как принято считать, непредвзято оспособляет закон внешнего мира, открывая новые горизонты.
+		Эклектика индуктивно оспособляет знак. Априори, язык образов неоднозначен.
+		Ощущение оспособляет интеллигибельный даосизм. Апперцепция совсем вырождена.
+		Отношение к современности, конечно, раскладывает на элементы дедуктивный метод.
+		Абстракция, безусловно, представляет собой бабувизм, учитывая все опасности, которые представляли собой писания Дюринга.
+	</p>
+</section>
+
+<section id="block-2">
+	<style>
+		#block-2 .points-list {
+			overflow: hidden;
+			width: 80%;
+			min-width: 25rem;
+			margin: 0 auto;
+			list-style: none inside;
+			background-color: #fff;
+		}
+
+		#block-2 .point-segment {
+			float: left;
+			width: calc(100% / 4);
+			text-align: center;
+		}
+
+		#block-2 .point-employee {
+			margin-bottom: 1rem;
+			font-family: 'Open Sans Condensed', sans-serif;
+			font-weight: 300;
+			color: #666;
+		}
+
+		#block-2 .point-time {
+			display: block
+		}
+
+		#block-2 .point-step {
+			border-top: 0.2rem solid;
+			font-family: 'Open Sans', sans-serif;
+			font-size: 0.8rem;
+			color: #64dd17;
+		}
+
+			#block-2 .point-step:before {
+				content: '';
+				display: block;
+				box-sizing: border-box;
+				height: 1.6rem;
+				width: 1.6rem;
+				margin: -0.9rem auto 0.5rem auto;
+				border: 0.2rem solid;
+				border-radius: 50%;
+				background-color: #64dd17;
+			}
+
+		#block-2 .point-segment:last-child .point-employee,
+		#block-2 .point-segment:last-child .point-step {
+			color: #bdbdbd
+		}
+
+			#block-2 .point-segment:last-child .point-step:before {
+				background-color: #fff
+			}
+	</style>
+	<header>
+		<h2>Блок № 2</h2>
+	</header>
+	<ul class="points-list">
+		<li class="point-segment">
+			<p class="point-employee">Abhi Sharma <time class="point-time" datetime="2019-11-15">15.11.2019</time></p>
+			<p class="point-step">Shift Created</p>
+		</li>
+		<li class="point-segment">
+			<p class="point-employee">PAM Admin <time class="point-time" datetime="2020-01-13">13.01.2020</time></p>
+			<p class="point-step">eMail Sent</p>
+		</li>
+		<li class="point-segment">
+			<p class="point-employee">Aron Rodgers <time class="point-time" datetime="2020-02-10">10.02.2020</time></p>
+			<p class="point-step">SIC Approval</p>
+		</li>
+		<li class="point-segment">
+			<p class="point-employee">PAM Admin <span class="point-time">TBD</span></p>
+			<p class="point-step">Shift Complated</p>
+		</li>
+	</ul>
+</section>
+
+<section id="block-3">
+	<style>
+		#block-3 .dates-list {
+			min-width: 35rem;
+			padding: 2rem 0;
+			list-style: none inside;
+			font-family: 'Open Sans', sans-serif;
+			background-color: #333;
+		}
+
+		#block-3 .date-item {
+			overflow: hidden;
+			clear: both;
+			width: 80%;
+			margin: 0 auto;
+		}
+
+		#block-3 .date-value {
+			display: block;
+			float: left;
+			width: 25%;
+			padding-right: 1rem;
+			font-size: 0.7rem;
+			line-height: 2rem;
+			text-align: right;
+			color: #999;
+		}
+
+		#block-3 .date-section {
+			float: right;
+			width: 75%;
+			padding-bottom: 3rem;
+			border-left: 0.2rem solid #64b5f6;
+			box-shadow: -1rem 0 1rem -1rem black;
+		}
+
+		#block-3 .date-item:last-child .date-section {
+			padding-bottom: 1rem
+		}
+
+		#block-3 .date-header {
+			overflow: hidden;
+			margin-left: -0.6rem;
+		}
+
+			#block-3 .date-header:before {
+				content: '';
+				display: block;
+				float: left;
+				box-sizing: border-box;
+				height: 1rem;
+				width: 1rem;
+				margin: 0.5rem 0.5rem 0 0;
+				border: 0.2rem solid #64b5f6;
+				border-radius: 50%;
+				background-color: #333;
+			}
+
+		#block-3 .date-title {
+			float: left;
+			font-size: 1rem;
+			line-height: 2rem;
+			color: #fff;
+		}
+
+		#block-3 .date-text {
+			margin-left: 1rem;
+			padding-top: 1rem;
+			border-top: 1px dotted;
+			font-size: 0.8rem;
+			line-height: 1.5em;
+			text-align: justify;
+			color: #999;
+		}
+	</style>
+	<header>
+		<h2>Блок № 3</h2>
+	</header>
+	<ul class="dates-list">
+		<li class="date-item">
+			<time class="date-value" datetime="2020-01-20">January 20, 2020</time><section class="date-section">
+				<header class="date-header">
+					<h4 class="date-title">Suspendisse eu lorem id magna</h4>
+				</header>
+				<p class="date-text">Fusce sollicitudin quam non feugiat commodo. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Curabitur fringilla justo tellus. Ut sapien felis, mollis ut ligula ac, efficitur pretium sapien. Curabitur vel ornare nisi, eu ullamcorper urna. Duis tempor, arcu et feugiat imperdiet, purus risus faucibus arcu, ut vehicula quam mi et magna. Mauris a pulvinar risus. Nunc porttitor nunc tincidunt ipsum interdum, nec porta lectus sagittis. Etiam nisl lectus, pretium id maximus ac, sagittis id lacus. Integer volutpat magna a placerat vestibulum. Donec condimentum sed nibh ac tristique. Integer elementum lacus a ante luctus, non facilisis urna pellentesque.</p>
+			</section>
+		</li>
+		<li class="date-item">
+			<time class="date-value" datetime="2020-02-17">February 17, 2020</time><section class="date-section">
+				<header class="date-header">
+					<h4 class="date-title">Maecenas feugiat nibh</h4>
+				</header>
+				<p class="date-text">Donec vehicula viverra elit, eget fermentum ipsum accumsan ullamcorper. Pellentesque vel orci aliquam, eleifend urna ac, consequat neque. Quisque felis eros, iaculis ut placerat a, scelerisque bibendum orci. Aliquam suscipit congue arcu. Vestibulum placerat bibendum risus at pharetra. Donec vestibulum elit a volutpat vehicula. Sed lectus nisl, rhoncus rutrum dolor et, tempor lacinia lorem. Sed est ipsum, maximus ut velit ut, volutpat varius tellus. Cras elementum sed enim a commodo.</p>
+			</section>
+		</li>
+		<li class="date-item">
+			<time class="date-value" datetime="2020-03-15">March 15, 2020</time><section class="date-section">
+				<header class="date-header">
+					<h4 class="date-title">Nullam tristique dui</h4>
+				</header>
+				<p class="date-text">Donec at auctor quam. Donec blandit eros ut quam aliquet, sed faucibus velit pellentesque. Etiam eget dui quis elit semper vulputate. Curabitur interdum felis eget metus lacinia interdum. Sed vel lectus maximus, egestas elit eget, interdum mi. Cras blandit elit metus. Aliquam at lacus justo. Aenean fermentum tellus quis quam accumsan ullamcorper. Proin luctus massa quis lacus sagittis, ac elementum augue accumsan. Praesent ullamcorper in orci eu dapibus. Nam quis porttitor sapien. Sed pharetra aliquet tincidunt. Nulla in nibh arcu.</p>
+			</section>
+		</li>
+		<li class="date-item">
+			<time class="date-value" datetime="2020-04-10">April 10, 2020</time><section class="date-section">
+				<header class="date-header">
+					<h4 class="date-title">Duis egestas ex nec eleifend</h4>
+				</header>
+				<p class="date-text">Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Curabitur dolor arcu, porta quis dui ut, finibus consectetur nisl. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Ut congue massa a mi rhoncus, non sodales nibh mattis. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Proin posuere ligula at metus blandit, volutpat eleifend elit malesuada. Duis vitae ligula molestie dui tempor sollicitudin sit amet pellentesque libero. Nam ullamcorper egestas tellus, ut consequat turpis sollicitudin eu.</p>
+			</section>
+		</li>
+		<li class="date-item">
+			<time class="date-value" datetime="2020-06-21">June 21, 2020</time><section class="date-section">
+				<header class="date-header">
+					<h4 class="date-title">Sed a lacus eu massa bibendum</h4>
+				</header>
+				<p class="date-text">Aenean neque erat, pellentesque nec rhoncus sit amet, eleifend nec risus. Donec tempus velit lectus, a fringilla justo dignissim et. Proin vitae nibh gravida, tempor justo sit amet, feugiat tellus. Suspendisse potenti. Quisque vitae vulputate quam. Aenean tincidunt, nibh sed ornare sollicitudin, tortor nisi mattis mi, sit amet aliquet nunc urna ut purus. Mauris et leo et turpis ullamcorper condimentum. Aenean malesuada ante vitae pulvinar finibus.</p>
+			</section>
+		</li>
+		<li class="date-item">
+			<time class="date-value" datetime="2020-07-02">July 02, 2020</time><section class="date-section">
+				<header class="date-header">
+					<h4 class="date-title">Nullam luctus lacus in porttitor</h4>
+				</header>
+				<p class="date-text">Aenean ut mattis nulla. Mauris blandit metus at pretium maximus. Etiam et massa rutrum, feugiat nibh vitae, molestie dolor. Vestibulum a nunc non enim sollicitudin molestie eget quis est. Curabitur scelerisque sollicitudin tempor. Donec non odio a dui imperdiet pellentesque ut ac leo. Etiam ut tempus ante. Nam sem urna, consequat non tortor eget, porta gravida est. Curabitur euismod nulla erat, nec tincidunt tellus auctor sed. Aliquam erat volutpat. Nunc venenatis erat ac velit efficitur, quis laoreet sapien feugiat. Vestibulum luctus est felis, non pharetra lacus malesuada vitae. Etiam vestibulum massa sit amet sapien vulputate, in varius urna luctus.</p>
+			</section>
+		</li>
+		<li class="date-item">
+			<time class="date-value" datetime="2020-08-12">August 12, 2020</time><section class="date-section">
+				<header class="date-header">
+					<h4 class="date-title">Vivamus sit amet nunc</h4>
+				</header>
+				<p class="date-text">Sed scelerisque tristique ullamcorper. Mauris molestie maximus quam in vulputate. Fusce blandit erat sit amet finibus congue. Donec felis purus, sagittis et consectetur vitae, tristique quis diam. Nulla a volutpat elit. Donec posuere fermentum suscipit. Donec vitae nisl a orci posuere imperdiet vitae quis lorem. Integer rhoncus eros quis orci commodo, ac tincidunt libero molestie. Vestibulum turpis nibh, efficitur nec semper vel, cursus quis metus. Vivamus in augue id ligula malesuada ornare ac ut nibh. Praesent feugiat quis tellus at auctor. Maecenas finibus diam in augue placerat, quis mollis erat tincidunt. Suspendisse tincidunt libero a rutrum accumsan. Nullam pharetra posuere urna. Suspendisse et pellentesque purus. Donec vestibulum nisl ac lacinia sollicitudin.</p>
+			</section>
+		</li>
+	</ul>
+</section>
+
+<section id="block-4">
+	<style>
+		#block-4 .navigator {
+			min-width: 35rem;
+			padding: 2rem;
+			background-color: #0288d1;
+		}
+
+		#block-4 .menu {
+			overflow: hidden;
+			max-width: 60rem;
+			margin: auto;
+			list-style: none inside;
+		}
+
+			#block-4 .menu > li {
+				float: left;
+				width: 20%;
+				font-family: 'PT Sans', sans-serif;
+				font-size: 0.85rem;
+				line-height: 2.3rem;
+				text-align: center;
+				text-transform: uppercase;
+				white-space: nowrap;
+				color: #e1f5fe;
+				cursor: pointer;
+			}
+
+				#block-4 .menu > li:before,
+				#block-4 .menu > li:after {
+					content: '';
+					display: block;
+					height: 0.1rem;
+					width: 30%;
+					margin: auto;
+					border: none;
+					background-color: #e1f5fe;
+				}
+
+				#block-4 .menu > li:hover:before,
+				#block-4 .menu > li:hover:after {
+					width: auto
+				}
+	</style>
+	<header>
+		<h2>Блок № 4</h2>
+	</header>
+	<nav class="navigator">
+		<ul class="menu">
+			<li>Home</li>
+			<li>Blog</li>
+			<li>Portfolio</li>
+			<li>About Us</li>
+			<li>Contacts</li>
+		</ul>
+	</nav>
+</section>
+
+<section id="block-5">
+	<style>
+		#block-5 .button,
+		#block-5 .button:before {
+			font-family: Consolas, monospace;
+			font-size: 2rem;
+			text-align: center;
+		}
+
+		#block-5 .button {
+			width: 20rem;
+			margin: 0 auto;
+			border: none;
+			border-radius: 10rem;
+			cursor: pointer;
+		}
+
+			#block-5 .button:before {
+				display: block;
+				content: 'button';
+				padding: 1rem 0;
+				background-color: #f44336;
+				color: #fff;
+			}
+
+			#block-5 .button:hover:before {
+				content: 'hover';
+				background-color: #4caf50
+			}
+
+			#block-5 .button:active:before {
+				content: 'active';
+				background-color: #2196f3
+			}
+	</style>
+	<header>
+		<h2>Блок № 5</h2>
+	</header>
+	<hr class="button" />
+</section>
+
+<section id="block-6">
+	<style>
+		#block-6 .content {
+			min-width: 40rem;
+			padding: 2rem;
+			background-color: #222;
+			background-image: linear-gradient(to right, rgba(255,255,255,0.05) 50%, rgba(255,255,255,0.15) 0 calc(50% + 1px), transparent 0)
+		}
+
+		#block-6 .content-header {
+			margin-bottom: 2rem
+		}
+
+		#block-6 .content-title {
+			margin-left: calc(50% + 1px);
+			padding-left: 0.5rem;
+			border-left: 0.2rem solid #ff5252;
+			font-family: 'PT Sans', sans-serif;
+			font-size: 2rem;
+			font-weight: bold;
+			letter-spacing: 0.1rem;
+			text-transform: uppercase;
+			color: #fff;
+		}
+
+		#block-6 .faq {
+			width: 75%;
+			min-width: 36rem;
+			margin-left: auto;
+		}
+
+		#block-6 .question {
+			box-shadow: 0 0 1rem -0.5rem black
+		}
+
+		#block-6 .question-link {
+			display: block;
+			overflow: hidden;
+			padding-left: 1rem;
+			border: 1px solid rgba(255,255,255,0.1);
+			font-family: 'Open Sans', sans-serif;
+			line-height: 3rem;
+			text-decoration: none;
+			background-color: rgba(255,255,255,0.1);
+			color: #fff;
+			cursor: default;
+		}
+
+			#block-6 .question-link:after {
+				content: '+';
+				display: block;
+				float: right;
+				height: 3rem;
+				width: 3rem;
+				font-size: 2rem;
+				text-align: center;
+			}
+
+			#block-6 .question-link:hover:after {
+				color: #ff5252
+			}
+
+		#block-6 .question:not(:target) .question-link:hover {
+			border-color: #ff5252;
+			cursor: pointer
+		}
+
+		#block-6 .question:target + .answer {
+			display: block
+		}
+
+		#block-6 .answer,
+		#block-6 .question:target .question-link:after {
+			display: none
+		}
+
+		#block-6 .answer {
+			padding: 2rem;
+			border: 1px solid rgba(255,255,255,0.1);
+			border-top: none;
+			box-shadow: 0 0.25rem 1rem -0.5rem black;
+			font-family: 'Open Sans', sans-serif;
+			font-size: 0.7rem;
+			line-height: 1.8em;
+			text-align: justify;
+			color: rgba(255,255,255,0.6);
+			background-color: rgba(255,255,255,0.05);
+		}
+
+			#block-6 .answer + .question {
+				margin-top: 1rem
+			}
+	</style>
+	<header>
+		<h2>Блок № 6</h2>
+	</header>
+	<section class="content">
+		<header class="content-header">
+			<h3 class="content-title">Questions</h3>
+		</header>
+		<dl class="faq">
+			<dt class="question" id="block-6-question-1">
+				<a class="question-link" href="#block-6-question-1">Dolorem eum fugiat quo voluptas nulla?</a>
+			</dt>
+			<dd class="answer">Предпринимательский риск, несмотря на некоторую вероятность дефолта, представляет собой ничтожный штраф.
+				Право собственности, как того требуют нормы международного частного права, лицензирует виновный гарант, исключая принцип презумпции невиновности.
+				Субъект, учитывая отсутствие в законе норм, посвященных данному вопросу, добросовестно использует закон.
+				Гарант устойчиво вознаграждает конституционный закон. Страховая сумма не урегулирована.
+				Согласно постановлению Правительства РФ, право собственности возмещает императивный кредитор.
+			</dd>
+
+			<dt class="question" id="block-6-question-2">
+				<a class="question-link" href="#block-6-question-2">Phasellus porta arcu vitae urna malesuada?</a>
+			</dt>
+			<dd class="answer">Акционерное общество защищено законом.
+				В зависимости от выбранного способа защиты гражданских прав, наследование запрещает кредитор, когда речь идет об ответственности юридического лица.
+				Обычай делового оборота гарантирует бытовой подряд. Если рассмотреть все принятые в последнее время нормативные акты, то видно,
+				что субаренда неравноправно своевременно исполняет индоссированный бытовой подряд.
+				По общему правилу доверенность гарантирует международный договор, делая этот вопрос чрезвычайно актуальным. Конституция антиконституционна.
+				Субаренда, как бы это ни казалось парадоксальным, представляет собой обычай делового оборота. Обязательство акцептовано.
+			</dd>
+
+			<dt class="question" id="block-6-question-3">
+				<a class="question-link" href="#block-6-question-3">Fusce rutrum arcu ut convallis semper?</a>
+			</dt>
+			<dd class="answer">Еще до момента заключения договора объект права бесконтрольно индоссирует правомерный сервитут, это применимо и к исключительным правам.
+				Право собственности возмещает субсидиарный объект права. Законодательство противозаконно трансформирует платежный бытовой подряд, именно такой позиции придерживается арбитражная практика.
+				Предпринимательский риск противоречиво лицензирует предпринимательский риск.
+				Согласно постановлению Правительства РФ, норма запрещает коносамент, что не имеет аналогов в англо-саксонской правовой системе.
+				Страховой полис представляет собой дееспособный закон.
+				Оферта, при ближайшем рассмотрении, правомерна. В соответствии со сложившейся правоприменительной практикой неустойка показательна.
+				Задаток, в первом приближении, наследует антимонопольный причиненный ущерб, исключая принцип презумпции невиновности.
+			</dd>
+
+			<dt class="question" id="block-6-question-4">
+				<a class="question-link" href="#block-6-question-4">Vivamus vulputate felis in hendrerit viverra?</a>
+			</dt>
+			<dd class="answer">Перестрахование неравноправно требует ничтожный индоссамент. Обычай делового оборота использует акционерный договор.
+				Кодекс требует судебный кредитор. Штраф, в представлениях континентальной школы права, субъективно обязывает сервитут, даже с учетом публичного характера данных правоотношений.
+				Еще до момента заключения договора фрахтование передано по акту. Задаток, вследствие публичности данных отношений, обязывает суд.
+				Суд устанавливает субсидиарный объект права, когда речь идет об ответственности юридического лица.
+				Сервитут бесконтрольно добросовестно использует виновный суд, учитывая недостаточную теоретическую проработанность этой отрасли права. Фрахтование лицензирует объект права.
+				Страховая сумма, по данным статистических наблюдений, виновно возмещает антимонопольный страховой полис, делая этот вопрос чрезвычайно актуальным.
+			</dd>
+
+			<dt class="question" id="block-6-question-5">
+				<a class="question-link" href="#block-6-question-5">Praesent in enim tincidunt erat imperdie?</a>
+			</dt>
+			<dd class="answer">В зависимости от выбранного способа защиты гражданских прав, доверенность катастрофично представляет собой договорный аккредитив.
+				Помимо права собственности и иных вещных прав, ограниченная ответственность индоссирует судебный субъект, учитывая недостаточную теоретическую проработанность этой отрасли права.
+				Доверенность, как бы это ни казалось парадоксальным, не урегулирована. Делькредере, несмотря на внешние воздействия, поручает вексель.
+				В соответствии со сложившейся правоприменительной практикой банкротство противозаконно устанавливает уголовный причиненный ущерб.
+				Доверенность гарантирует конфиденциальный объект права.
+				Государственная регистрация запрещает договорный закон, учитывая недостаточную теоретическую проработанность этой отрасли права.
+				Обычай делового оборота, делая скидку на латентность данных правоотношений, своевременно исполняет индоссированный умысел.
+				Указ, вследствие публичности данных отношений, гарантирует ничтожный индоссамент.
+			</dd>
+		</dl>
+	</section>
+</section>
+
+<section id="block-7">
+	<style>
+		#block-7 .menu {
+			overflow: hidden;
+			min-width: 30rem;
+			margin: 0 auto;
+			padding: 2rem;
+			list-style: none inside;
+			background-color: #eceff1;
+		}
+
+			#block-7 .menu > li {
+				float: left;
+				width: calc((100% - 4rem) / 5);
+				padding-bottom: 1rem;
+				font-family: 'PT Sans', sans-serif;
+				font-size: 0.85rem;
+				font-weight: bold;
+				line-height: 1rem;
+				text-align: center;
+				text-transform: uppercase;
+				color: #333;
+				cursor: pointer;
+			}
+
+				#block-7 .menu > li + li {
+					margin-left: 1rem
+				}
+
+				#block-7 .menu > li:before {
+					content: '';
+					display: block;
+					height: 4rem;
+					width: 4rem;
+					margin: auto;
+					background-image: url(img/sprite-01.svg);
+					background-repeat: no-repeat
+				}
+
+				#block-7 .menu > li:hover {
+					box-shadow: 0 0.5rem 0.5rem -0.25rem rgba(0,0,0,0.5);
+					background-color: #455a64;
+					color: #eceff1
+				}
+
+				#block-7 .menu > li:active {
+					box-shadow: none
+				}
+
+				#block-7 .menu > li:hover:before {
+					filter: brightness(2)
+				}
+
+				#block-7 .menu > li.home:before {
+					background-position-x: 0
+				}
+
+				#block-7 .menu > li.blog:before {
+					background-position-x: -4rem
+				}
+
+				#block-7 .menu > li.portfolio:before {
+					background-position-x: -8rem
+				}
+
+				#block-7 .menu > li.about:before {
+					background-position-x: -12rem
+				}
+
+				#block-7 .menu > li.contacts:before {
+					background-position-x: -16rem
+				}
+	</style>
+	<header>
+		<h2>Блок № 7</h2>
+	</header>
+	<ul class="menu">
+		<li class="home">Home</li>
+		<li class="blog">Blog</li>
+		<li class="portfolio">Portfolio</li>
+		<li class="about">About</li>
+		<li class="contacts">Contacts</li>
+	</ul>
+</section>
+
+<section id="block-8">
+	<style>
+		#block-8 .menu {
+			overflow: hidden;
+			width: 45rem;
+			margin: 0 auto;
+			padding: 1rem;
+			list-style: none inside;
+			background-color: black;
+		}
+
+			#block-8 .menu > li {
+				float: left;
+				width: calc((100% - 4rem) / 5);
+				padding: 0.5rem;
+				border-radius: 0.25rem;
+				font-family: 'PT Sans', sans-serif;
+				font-size: 0.85rem;
+				font-weight: bold;
+				line-height: 2rem;
+				text-transform: uppercase;
+				color: #fff;
+				cursor: pointer;
+			}
+
+				#block-8 .menu > li + li {
+					margin-left: 1rem
+				}
+
+				#block-8 .menu > li:hover {
+					background-image: linear-gradient(to right, #b71c1c 2rem, transparent)
+				}
+
+				#block-8 .menu > li:before {
+					content: '';
+					display: block;
+					height: 2rem;
+					width: 2rem;
+					float: left;
+					background-image: url(img/sprite-02.svg);
+					background-repeat: no-repeat;
+					filter: invert(1);
+				}
+
+				#block-8 .menu > li.home:before {
+					background-position-y: 0
+				}
+
+				#block-8 .menu > li.blog:before {
+					background-position-y: -2rem
+				}
+
+				#block-8 .menu > li.portfolio:before {
+					background-position-y: -4rem
+				}
+
+				#block-8 .menu > li.about:before {
+					background-position-y: -6rem
+				}
+
+				#block-8 .menu > li.contacts:before {
+					background-position-y: -8rem
+				}
+	</style>
+	<header>
+		<h2>Блок № 8</h2>
+	</header>
+	<ul class="menu">
+		<li class="home">Home</li>
+		<li class="blog">Blog</li>
+		<li class="portfolio">Portfolio</li>
+		<li class="about">About</li>
+		<li class="contacts">Contacts</li>
+	</ul>
+</section>
+
+<section id="block-9">
+	<style>
+		#block-9 .wrapper {
+			min-width: 35rem;
+			padding: 5rem;
+			background-color: #fafafa;
+		}
+
+		#block-9 .menu-panel {
+			max-width: 35rem;
+			min-width: 25rem;
+			margin: auto;
+			padding: 2rem;
+			background-color: #fff;
+			box-shadow: 0 0.5rem 2rem -0.5rem rgba(0,0,0,0.5);
+		}
+
+		#block-9 .menu {
+			overflow: hidden;
+			margin: auto;
+			list-style: none inside;
+		}
+
+			#block-9 .menu:hover .menu-item {
+				width: calc(100% / 5)
+			}
+
+		#block-9 .menu-item {
+			overflow: hidden;
+			float: left;
+			width: calc(100% / 4);
+			cursor: pointer
+		}
+
+		#block-9 .menu:hover .menu-item:hover {
+			width: 40%;
+			padding-left: 0.5rem;
+			background-color: rgba(255,87,34,0.1);
+		}
+
+		#block-9 .menu-item:hover:before {
+			float: left
+		}
+
+		#block-9 .menu-item:hover .menu-title {
+			display: block
+		}
+
+		#block-9 .menu-title {
+			display: none;
+			float: left;
+			width: calc(100% - 3rem);
+			font-family: 'Open Sans', sans-serif;
+			font-size: 0.85rem;
+			font-weight: 600;
+			line-height: 3rem;
+			color: #ff5722;
+		}
+
+		#block-9 .menu-item:before {
+			content: '';
+			display: block;
+			height: 3rem;
+			width: 3rem;
+			margin: 0 auto;
+			background-image: url(img/sprite-04.svg);
+			background-repeat: no-repeat;
+		}
+
+		#block-9 .menu-item.home:before {
+			background-position-x: 0
+		}
+
+		#block-9 .menu-item.home:hover {
+			filter: hue-rotate(60deg)
+		}
+
+		#block-9 .menu-item.likes:before {
+			background-position-x: -3rem
+		}
+
+		#block-9 .menu-item.likes:hover {
+			filter: hue-rotate(120deg)
+		}
+
+		#block-9 .menu-item.search:before {
+			background-position-x: -6rem
+		}
+
+		#block-9 .menu-item.search:hover {
+			filter: hue-rotate(180deg)
+		}
+
+		#block-9 .menu-item.profile:before {
+			background-position-x: -9rem
+		}
+
+		#block-9 .menu-item.profile:hover {
+			filter: hue-rotate(240deg)
+		}
+	</style>
+	<header>
+		<h2>Блок № 9</h2>
+	</header>
+	<div class="wrapper">
+		<nav class="menu-panel">
+			<ul class="menu">
+				<li class="menu-item home"><span class="menu-title">Home</span></li>
+				<li class="menu-item likes"><span class="menu-title">Likes</span></li>
+				<li class="menu-item search"><span class="menu-title">Search</span></li>
+				<li class="menu-item profile"><span class="menu-title">Profile</span></li>
+			</ul>
+		</nav>
+	</div>
+</section>
+
+<section id="block-10">
+	<style>
+		#block-10 .navigator {
+			min-width: 40rem;
+			padding: 5rem;
+			background-image: linear-gradient(45deg, #ea4a4b 25%, #f5b847 calc(25% + 1px) 50%, #408c96 calc(50% + 1px) 75%, #121f34 calc(75% + 1px));
+		}
+
+		#block-10 .menu {
+			overflow: hidden;
+			width: 30rem;
+			margin: auto;
+			list-style: none inside;
+			box-shadow: 0 0.5rem 2rem -0.5rem rgba(0,0,0,0.5);
+		}
+
+			#block-10 .menu:hover > li:not(:hover) {
+				width: 20%
+			}
+
+			#block-10 .menu:hover > li:hover {
+				width: 40%
+			}
+
+			#block-10 .menu > li {
+				overflow: hidden;
+				float: left;
+				width: calc(100% / 4);
+				padding: 1rem 0;
+				font-family: 'PT Sans', sans-serif;
+				font-size: 0.85rem;
+				line-height: 2rem;
+				letter-spacing: 0.1em;
+				text-align: center;
+				text-transform: lowercase;
+				color: rgba(255,255,255,0.75);
+				cursor: pointer;
+			}
+
+				#block-10 .menu > li:before {
+					content: '';
+					display: block;
+					width: 2rem;
+					height: 2rem;
+					margin: auto;
+					background-image: url(img/sprite-05.svg);
+					background-repeat: no-repeat;
+				}
+
+				#block-10 .menu > li.profile:before {
+					background-position-x: 0
+				}
+
+				#block-10 .menu > li.locations:before {
+					background-position-x: -2rem
+				}
+
+				#block-10 .menu > li.statistics:before {
+					background-position-x: -4rem
+				}
+
+				#block-10 .menu > li.settings:before {
+					background-position-x: -6rem
+				}
+	</style>
+	<header>
+		<h2>Блок № 10</h2>
+	</header>
+	<nav class="navigator">
+		<ul class="menu">
+			<li class="profile" style="background-color: #ea4a4b">Profile</li>
+			<li class="locations" style="background-color: #f5b847">Locations</li>
+			<li class="statistics" style="background-color: #408c96">Statistics</li>
+			<li class="settings" style="background-color: #121f34">Settings</li>
+		</ul>
+	</nav>
+</section>
+
+<section id="block-11">
+	<style>
+		#block-11 .list {
+			overflow: hidden;
+			min-width: 40em;
+			padding: 0 2em 2em 2em;
+			list-style: none inside;
+			background-color: #333;
+		}
+
+		#block-11 .panel {
+			float: left;
+			width: calc((100% - 6em) / 4);
+			padding-top: 2em;
+		}
+
+			#block-11 .panel + .panel {
+				margin-left: 2em
+			}
+
+		#block-11 .panel-content {
+			display: block;
+			font-family: Consolas, monospace;
+			font-size: 2em;
+			line-height: 4rem;
+			text-align: center;
+			text-decoration: none;
+			color: #fff;
+			background-color: #666;
+		}
+
+			#block-11 .panel-content:before,
+			#block-11 .panel-content:after {
+				display: block;
+				content: '';
+				height: 0;
+				width: 0;
+				cursor: default;
+			}
+
+			#block-11 .panel-content:before {
+				margin-bottom: 2rem;
+				border-left: 3rem solid #333;
+				border-bottom: 3rem solid transparent;
+			}
+
+			#block-11 .panel-content:after {
+				margin-top: 2rem;
+				margin-left: auto;
+				border-right: 3rem solid #333;
+				border-top: 3rem solid transparent;
+			}
+
+		#block-11 .panel:target .panel-content {
+			cursor: default
+		}
+
+			#block-11 .panel:target .panel-content:before {
+				box-shadow: 0.5rem 0.5rem 1rem -0.5rem black
+			}
+
+			#block-11 .panel:target .panel-content:after {
+				box-shadow: -0.5rem -0.5rem 1rem -0.5rem black
+			}
+
+		#block-11 #block-11-red:not(:target) .panel-content:hover {
+			color: #f44336
+		}
+
+		#block-11 #block-11-red:target .panel-content {
+			background-color: #f44336
+		}
+
+		#block-11 #block-11-green:not(:target) .panel-content:hover {
+			color: #4caf50
+		}
+
+		#block-11 #block-11-green:target .panel-content {
+			background-color: #4caf50
+		}
+
+		#block-11 #block-11-blue:not(:target) .panel-content:hover {
+			color: #2196f3
+		}
+
+		#block-11 #block-11-blue:target .panel-content {
+			background-color: #2196f3
+		}
+
+		#block-11 #block-11-alpha:not(:target) .panel-content:hover {
+			color: #333
+		}
+
+		#block-11 #block-11-alpha:target .panel-content {
+			background-color: #fff;
+			color: #333
+		}
+	</style>
+	<header>
+		<h2>Блок № 11</h2>
+	</header>
+	<ul class="list">
+		<li class="panel" id="block-11-red"><a class="panel-content" href="#block-11-red">red</a></li>
+		<li class="panel" id="block-11-green"><a class="panel-content" href="#block-11-green">green</a></li>
+		<li class="panel" id="block-11-blue"><a class="panel-content" href="#block-11-blue">blue</a></li>
+		<li class="panel" id="block-11-alpha"><a class="panel-content" href="#block-11-alpha">alpha</a></li>
+	</ul>
+</section>
+
+<section id="block-12">
+	<style>
+		#block-12 .wrapper {
+			overflow: hidden;
+			min-width: 50rem;
+			padding: 1rem;
+			font-family: 'Open Sans', sans-serif;
+			background-color: #1e88e5;
+		}
+
+		#block-12 .panel {
+			float: left;
+			height: 40rem;
+		}
+
+		#block-12 .panel-title {
+			font-size: 1em;
+			font-weight: 600;
+		}
+
+		#block-12 .right {
+			width: 40%;
+			min-height: 800px;
+			background-color: #fff;
+		}
+
+		#block-12 .aside {
+			width: 20%;
+			padding: 1rem 0 0 0
+		}
+
+			#block-12 .aside .panel-header {
+				margin: 0 0 1rem 1rem
+			}
+
+			#block-12 .aside .panel-title {
+				color: #e3f2fd
+			}
+
+			#block-12 .aside .folders {
+				list-style: none inside
+			}
+
+			#block-12 .aside .folder {
+				overflow: hidden;
+				height: 3rem;
+				font-size: 0.7rem;
+				font-weight: 600;
+				line-height: 3rem;
+				color: #e3f2fd;
+				cursor: pointer;
+			}
+
+				#block-12 .aside .folder:before {
+					content: '';
+					display: block;
+					float: left;
+					width: 3rem;
+					height: 3rem;
+					background-image: url(img/sprite-06.svg);
+					background-repeat: no-repeat;
+				}
+
+				#block-12 .aside .folder.inbox:before {
+					background-position-x: 0
+				}
+
+				#block-12 .aside .folder.sent:before {
+					background-position-x: -3rem
+				}
+
+				#block-12 .aside .folder.draft:before {
+					background-position-x: -6rem
+				}
+
+				#block-12 .aside .folder.saved:before {
+					background-position-x: -9rem
+				}
+
+				#block-12 .aside .folder.spam:before {
+					background-position-x: -12rem
+				}
+
+				#block-12 .aside .folder.deleted:before {
+					background-position-x: -15rem
+				}
+
+				#block-12 .aside .folder:hover {
+					color: #333;
+					background-color: #fafafa
+				}
+
+					#block-12 .aside .folder:hover:before {
+						background-position-y: -3rem
+					}
+
+		#block-12 .center {
+			width: 40%;
+			overflow-x: hidden;
+			overflow-y: auto;
+			padding: 1rem;
+			background-color: #fafafa;
+		}
+
+			#block-12 .center .mails {
+				margin-top: 1rem;
+				list-style: none inside;
+			}
+
+			#block-12 .center .mail {
+				overflow: hidden;
+				padding: 0.5rem;
+				cursor: pointer;
+			}
+
+				#block-12 .center .mail:hover {
+					background-color: #e3f2fd
+				}
+
+			#block-12 .center .mail-avatar {
+				display: block;
+				float: left;
+				width: 2rem;
+				aspect-ratio: 1 / 1;
+				object-fit: cover;
+			}
+
+			#block-12 .center .mail-data {
+				float: right;
+				width: calc(100% - 3rem);
+			}
+
+			#block-12 .center .mail-sender {
+				overflow: hidden;
+				font-size: 0.7rem;
+				font-weight: bold;
+				line-height: 1rem;
+				color: #aaa;
+			}
+
+			#block-12 .center .mail-date {
+				float: right;
+				font-size: 0.6rem;
+				line-height: 1rem;
+			}
+
+			#block-12 .center .mail-title {
+				overflow: hidden;
+				font-size: 0.85rem;
+				line-height: 1rem;
+				white-space: nowrap;
+				text-overflow: ellipsis;
+			}
+
+			#block-12 .center .mail-text {
+				overflow: hidden;
+				height: 2rem;
+				margin-top: 0.5rem;
+				font-size: 0.7rem;
+				line-height: 1rem;
+				color: #999;
+			}
+	</style>
+	<header>
+		<h2>Блок № 12</h2>
+	</header>
+	<div class="wrapper">
+		<aside class="aside panel">
+			<header class="panel-header">
+				<h3 class="panel-title">Outlook</h3>
+			</header>
+			<ul class="folders">
+				<li class="folder inbox">Inbox</li>
+				<li class="folder sent">Sent</li>
+				<li class="folder draft">Draft</li>
+				<li class="folder saved">Saved</li>
+				<li class="folder spam">Spam</li>
+				<li class="folder deleted">Deleted</li>
+			</ul>
+		</aside>
+		<section class="center panel">
+			<header class="panel-header">
+				<h3 class="panel-title">Sent</h3>
+			</header>
+			<ul class="mails">
+				<li class="mail">
+					<img class="mail-avatar" src="img/avatar_01.jpg" />
+					<div class="mail-data">
+						<header class="mail-header">
+							<p class="mail-sender">Julia Lavoi <time class="mail-date">08:56 PM</time></p>
+							<h4 class="mail-title">Co-operation Inquiry</h4>
+						</header>
+						<p class="mail-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt</p>
+					</div>
+				</li>
+				<li class="mail">
+					<img class="mail-avatar" src="img/avatar_02.jpg" />
+					<div class="mail-data">
+						<header class="mail-header">
+							<p class="mail-sender">Nor Again <time class="mail-date">07:14 PM</time></p>
+							<h4 class="mail-title">Fugiat quo nulla pariatur?</h4>
+						</header>
+						<p class="mail-text">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip</p>
+					</div>
+				</li>
+				<li class="mail">
+					<img class="mail-avatar" src="img/avatar_03.jpg" />
+					<div class="mail-data">
+						<header class="mail-header">
+							<p class="mail-sender">Some Advantage <time class="mail-date">05:34 PM</time></p>
+							<h4 class="mail-title">Nor again is there anyone who loves</h4>
+						</header>
+						<p class="mail-text">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla</p>
+					</div>
+				</li>
+				<li class="mail">
+					<img class="mail-avatar" src="img/avatar_04.jpg" />
+					<div class="mail-data">
+						<header class="mail-header">
+							<p class="mail-sender">Nam Libero <time class="mail-date">Nov 23</time></p>
+							<h4 class="mail-title">Ut aut reiciendis voluptatibus</h4>
+						</header>
+						<p class="mail-text">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit</p>
+					</div>
+				</li>
+				<li class="mail">
+					<img class="mail-avatar" src="img/avatar_05.jpg" />
+					<div class="mail-data">
+						<header class="mail-header">
+							<p class="mail-sender">H. Rackham <time class="mail-date">Nov 23</time></p>
+							<h4 class="mail-title">Certain and owing</h4>
+						</header>
+						<p class="mail-text">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque</p>
+					</div>
+				</li>
+				<li class="mail">
+					<img class="mail-avatar" src="img/avatar_06.jpg" />
+					<div class="mail-data">
+						<header class="mail-header">
+							<p class="mail-sender">Modi Tempora <time class="mail-date">Nov 22</time></p>
+							<h4 class="mail-title">He rejects pleasures to secure</h4>
+						</header>
+						<p class="mail-text">Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur</p>
+					</div>
+				</li>
+				<li class="mail">
+					<img class="mail-avatar" src="img/avatar_07.jpg" />
+					<div class="mail-data">
+						<header class="mail-header">
+							<p class="mail-sender">Sapiente Delectus <time class="mail-date">Nov 20</time></p>
+							<h4 class="mail-title">Culpa qui officia deserunt</h4>
+						</header>
+						<p class="mail-text">Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit</p>
+					</div>
+				</li>
+				<li class="mail">
+					<img class="mail-avatar" src="img/avatar_08.jpg" />
+					<div class="mail-data">
+						<header class="mail-header">
+							<p class="mail-sender">Bonorum et Malorum <time class="mail-date">Nov 20</time></p>
+							<h4 class="mail-title">Quis nostrum exercitationem</h4>
+						</header>
+						<p class="mail-text">Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut?</p>
+					</div>
+				</li>
+			</ul>
+		</section>
+		<section class="right panel"></section>
+	</div>
+</section>
+
+</main>
+</body>
+</html>
